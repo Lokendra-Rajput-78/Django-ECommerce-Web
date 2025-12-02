@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ p.title }}</title>
+  <link rel="stylesheet" href="{% static 'css/product.css' %}">
+</head>
+
+<body>
+
+  <div id="productDetails" class="product-box">
+    
+    <img src="{{ p.img }}" class="product-img">
+
+    <h1>{{ p.title }}</h1>
+    <h2>{{ p.brand }}</h2>
+
+    <div>
+      <span class="price">{{ p.price }}</span>
+      <span class="old-price">{{ p.oldPrice }}</span>
+    </div>
+
+    <p>{{ p.description }}</p>
+    
+    <a class="buy-btn" href="{{ p.link }}" target="_blank">Buy Now</a>
+
+  </div>
+
+  <h2 class="related-heading">Related Products</h2>
+
+<div class="related-box ">
+  {% for item in related %}
+  <div class="product-box"><a class="card" href="/product/{{ cat }}/{{ item.id }}/">
+    <img src="{{ item.img }}">
+    <h2 class="title">{{ item.title|slice:":30" }}...</h2>
+    <p class="price">{{ item.price }}</p>
+        </a></div>
+    {% empty %}
+        <p>No related products found</p>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>

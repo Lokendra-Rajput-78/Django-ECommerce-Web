@@ -1,0 +1,47 @@
+{% load static %}
+{% load socialaccount %}
+
+<!-- AUTH POPUP (partial) -->
+<div class="auth-bg" id="authPopup" aria-hidden="true">
+  <div class="auth-container" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <button class="close-btn" onclick="closeAuth()" aria-label="Close auth">✕</button>
+
+    <div class="tabs">
+      <button class="tab active" onclick="openTab(event,'login')">Login</button>
+      <button class="tab" onclick="openTab(event,'signup')">Signup</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="login" class="form active">
+      <h2 id="authTitle">Welcome Back 👋</h2>
+
+      <input class="input" id="log-username" placeholder="Username">
+      <input class="input" type="password" id="log-password" placeholder="Password">
+
+      <button class="btn login-btn" onclick="loginUser()">Login</button>
+
+      <div class="or-line">OR</div>
+
+      <a class="google-btn" href="{% provider_login_url 'google' %}">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="google">
+          Continue with Google
+      </a>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signup" class="form">
+      <h2>Create Account ✨</h2>
+
+      <input class="input" id="reg-username" placeholder="Username">
+      <input class="input" type="password" id="reg-password" placeholder="Password">
+
+      <select id="reg-gender" class="input">
+          <option>Male</option>
+          <option>Female</option>
+      </select>
+
+      <button class="btn signup-btn" onclick="registerUser()">Signup</button>
+    </div>
+
+  </div>
+</div>

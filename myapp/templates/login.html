@@ -1,0 +1,200 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Signup</title>
+
+  <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+
+<body class="auth-bg">
+
+  <div class="auth-container">
+
+    <button class="close-btn" onclick="closePage()">✕</button>
+
+
+    <div class="tabs">
+      <button class="tab active" onclick="openTab('login')">Login</button>
+      <button class="tab" onclick="openTab('signup')">Signup</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="login" class="form active">
+      <h2>Welcome Back 👋</h2>
+
+      <input class="input" id="log-email" placeholder="Enter Gmail">
+      <p class="error" id="err-log-email"></p>
+
+      <input class="input" type="password" id="log-password" placeholder="Password">
+      <p class="error" id="err-log-password"></p>
+
+      <button class="btn login-btn" onclick="loginUser()">Login</button>
+
+      <div class="or-line">OR</div>
+
+      <a class="google-btn" href="{% provider_login_url 'google' %}">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">
+        Continue with Google
+      </a>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signup" class="form">
+      <h2>Create Account ✨</h2>
+
+      <input class="input" id="reg-email" placeholder="Enter Gmail">
+      <p class="error" id="err-email"></p>
+
+      <input class="input" type="password" id="reg-password" placeholder="Password">
+      <p class="error" id="err-password"></p>
+
+      <input class="input" type="password" id="reg-repassword" placeholder="Re-enter Password">
+      <p class="error" id="err-repass"></p>
+
+
+      <select id="reg-gender" class="input">
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+
+      <button class="btn signup-btn" onclick="registerUser()">Signup</button>
+    </div>
+
+  </div>
+
+  <script src="{% static 'js/auth.js' %}"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueNest - Login & Signup</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+</head>
+
+<body class="login-page he-theme">
+
+  <div class="Login-body">
+
+    <div class="blur-overlay"></div>
+
+    <div class="tab-box">
+      <button class="tab-btn active" onclick="showTab('login')">Login</button>
+      <button class="tab-btn" onclick="showTab('signup')">Signup</button>
+    </div>
+
+    <div id="login" class="form-box active">
+      <h2 class="title">Login</h2>
+
+      <input id="log-username" class="input" placeholder="Username">
+      <input id="log-password" class="input" type="password" placeholder="Password">
+
+      <button class="btn" onclick="loginUser()">Login</button>
+    </div>
+
+    <div id="signup" class="form-box">
+      <h2 class="L-title">Signup</h2>
+
+      <input id="reg-username" class="input" placeholder="Username">
+      <input id="reg-password" class="input" type="password" placeholder="Password">
+
+      <select id="reg-gender" class="input">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <button class="btn" onclick="registerUser()">Register</button>
+    </div>
+
+                                  </a>
+                    {% load socialaccount %}
+                    <a href="{% provider_login_url 'google' %}">
+                        <button style="padding:10px 16px; background:#4285F4; color:#fff; border-radius:5px;">
+                            Login with Google
+                        </button>
+                    </a>
+    {% if user.is_authenticated %}
+    <a href="/profile/">My Profile</a>
+    {% else %}
+    <a href="/accounts/login/">Login</a>
+    {% endif %}
+
+  </div>
+
+
+  <script src="{% static 'js/login.js' %}"></script>
+</body>
+
+</html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - BlueNest Clothing</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body class="login-page">
+
+ <input id="log-username" placeholder="Username">
+<input id="log-password" type="password" placeholder="Password">
+<button onclick="loginUser()">Login</button>
+
+
+<a href="Register.html">jjjjjaaaoooooo</a>
+
+<script src="login.js"></script>
+</body>
+</html> -->
