@@ -10,7 +10,12 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "django-ecommerce-web-kewq.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
+
 
 
 # -------------------google login setup ---------------------
