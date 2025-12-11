@@ -86,6 +86,7 @@ nav {
   gap: 10px;
   list-style: none;
   text-decoration: none;
+  padding: 0;
 }
 
 .nav_first ul li a {
